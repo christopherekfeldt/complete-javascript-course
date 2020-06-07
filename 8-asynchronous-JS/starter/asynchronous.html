@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Asynchronous JavaScript</title>
 </head>
+
 <body>
     <h1>Asynchronous JavaScript</h1>
     <script>
+
+        /*         const getIDs = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve([523, 883, 432, 974]);
+                    }, 1500);
+                });
         
-    </script>
+                const getRecipe = recID => {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(ID => {
+                            const recipe = {
+                                title: "Fresh tomato pasta",
+                                publisher: "Christopher"
+                            };
+                            resolve(`${ID}: ${recipe.title}`);
+                        }
+                            , 1500, recID);
+                    });
+                };
+        
+                const getRelated = publisher => {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(pub => {
+                            const recipe = {
+                                title: "Italian pizza",
+                                publisher: "Christopher"
+                            }
+                            resolve(recipe);
+                        }, 1500, publisher)
+                    })
+                } */
+
+        /* 
+                getIDs
+                    .then(IDs => {
+                        console.log(IDs);
+                        return getRecipe(IDs[2]);
+                    })
+                    .then(recipe => {
+                        console.log(recipe)
+                        return getRelated(recipe.publisher)
+                    })
+                    .then(recipe => {
+                        console.log(recipe)
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    }); */
+
+        /*         async function getRecipesAW() {
+        
+                    const IDs = await getIDs;
+                    console.log(IDs)
+        
+                    const recipe = await getRecipe(IDs[2])
+                    console.log(recipe)
+        
+                    const related = await getRelated();
+                    console.log(`${related.publisher}: ${related.title}`)
+        
+                    return recipe;
+                }
+        
+                getRecipesAW().then(result => console.log(result)); */
+
+        fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/44418/`)
+            .then(res => {
+                console.log(res)
+                return result.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => console.log(err))
+
+    </script>>
 </body>
+
 </html>
